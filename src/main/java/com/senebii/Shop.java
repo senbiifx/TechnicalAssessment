@@ -1,7 +1,6 @@
 package com.senebii;
 
 import java.util.Date;
-import java.util.logging.Logger;
 
 import com.senebii.billing.Bill;
 import com.senebii.cart.LineItem;

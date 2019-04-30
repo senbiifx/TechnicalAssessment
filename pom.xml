@@ -8,8 +8,8 @@
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<sonar.exclusions>com/senebii/Shop.*</sonar.exclusions>
-        <sonar.coverage.exclusions>com/senebii/Shop.*</sonar.coverage.exclusions>
+		<sonar.exclusions>**/Shop.*</sonar.exclusions>
+        <sonar.coverage.exclusions>**/Shop.*</sonar.coverage.exclusions>
 	</properties>
 	<build>
 		<plugins>
