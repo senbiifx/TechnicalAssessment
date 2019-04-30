@@ -4,6 +4,11 @@ import com.senebii.customer.Customer;
 import com.senebii.customer.CustomerType;
 
 public class DiscountStrategyFactory {
+	
+	private DiscountStrategyFactory() {
+		
+	}
+	
 	public static DiscountStrategy getDiscountStrategy(Customer customer) {
 		if( customer.getType() == CustomerType.EMPLOYEE  ) {
 			return new DiscountForEvery100( new EmployeeDiscount() );

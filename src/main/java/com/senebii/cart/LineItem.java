@@ -5,7 +5,7 @@ import com.senebii.product.Product;
 public class LineItem {
 	private Integer id;
 	private ShoppingCart order;
-	private Product product;;
+	private Product product;
 	private int quantity;
 	
 	public LineItem(int id, ShoppingCart cart, Product product, int quantity) {

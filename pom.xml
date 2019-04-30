@@ -8,6 +8,7 @@
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+        <sonar.exclusions>com/senebii/Shop.java</sonar.exclusions>
 	</properties>
 	<build>
 		<plugins>

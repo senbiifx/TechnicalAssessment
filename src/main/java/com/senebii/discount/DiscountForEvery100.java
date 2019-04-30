@@ -5,8 +5,8 @@ import com.senebii.utils.Utils;
 
 public class DiscountForEvery100 implements DiscountStrategy{
 
-	private double DISCOUNT = 5;
-	private double FOREVERYAMOUNT = 100;
+	private static final double DISCOUNT = 5;
+	private static final double FOREVERYAMOUNT = 100;
 	private DiscountStrategy discountStrategy;
 	
 	public DiscountForEvery100(DiscountStrategy discountStrategy) {

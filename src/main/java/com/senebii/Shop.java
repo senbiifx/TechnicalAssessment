@@ -20,7 +20,7 @@ public class Shop {
 		
 		Bill bill = cart.getBill();
 		
-		System.out.println("Total amount: " + bill.getTotal());
+		System.out.println("Total amount: " + bill.getTotal()); 
 		System.out.println("Discount: " + bill.getDiscount());
 		System.out.println("Net Payable Amount: " + bill.getNetPayableAmount());
 	}
