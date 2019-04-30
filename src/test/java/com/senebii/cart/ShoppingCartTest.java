@@ -42,6 +42,19 @@ public class ShoppingCartTest {
 	}
 	
 	@Test
+	@DisplayName("Add 2 different items then delete the other one")
+	public void testGetNetPayableAmoun_2items() {
+		Customer c = new Customer(1, new Date(), CustomerType.EMPLOYEE);
+		ShoppingCart cart = new ShoppingCart(c);
+		Product product = new Product(1, 100);
+		Product product2 = new Product(2, 100);
+		cart.addOrUpdateItem(new LineItem(1, cart, product));
+		cart.addOrUpdateItem(new LineItem(2, cart, product2));
+		cart.deleteItem(new LineItem(2, cart, product2));
+		assertEquals(65, cart.getBill().getNetPayableAmount());
+	}
+	
+	@Test
 	@DisplayName("Add 2 different items then validate the amount")
 	public void testDiscount_2items() {
 		Customer c = new Customer(1, new Date(), CustomerType.EMPLOYEE);
