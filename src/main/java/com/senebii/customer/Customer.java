@@ -1,19 +1,16 @@
 package com.senebii.customer;
 
-import java.util.Arrays;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Customer {
 	private int id;
 	private Date joinDate;
-	private Set<CustomerType> types;
+	private CustomerType type;
 	
-	public Customer(int id, Date joinDate, CustomerType... type) {
+	public Customer(int id, Date joinDate, CustomerType type) {
 		this.id = id;
 		this.joinDate = joinDate;
-		this.types = new HashSet<>(Arrays.asList(type));
+		this.type = type;
 	}
 	
 	public Customer(int id, Date joinDate) {
@@ -33,16 +30,13 @@ public class Customer {
 		this.joinDate = joinDate;
 	}
 
-	public Set<CustomerType> getTypes() {
-		return types;
+	public CustomerType getType() {
+		return type;
 	}
 
-	public void setTypes(Set<CustomerType> types) {
-		this.types = types;
+	public void setType(CustomerType type) {
+		this.type = type;
 	}
-	
-	public void addType(CustomerType type) {
-		types.add(type);
-	}
+
 	
 }

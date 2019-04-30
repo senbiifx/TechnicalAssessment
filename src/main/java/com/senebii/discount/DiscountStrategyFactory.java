@@ -5,10 +5,10 @@ import com.senebii.customer.CustomerType;
 
 public class DiscountStrategyFactory {
 	public static DiscountStrategy getDiscountStrategy(Customer customer) {
-		if( customer.getTypes().contains( CustomerType.EMPLOYEE ) ) {
+		if( customer.getType() == CustomerType.EMPLOYEE  ) {
 			return new DiscountForEvery100( new EmployeeDiscount() );
 			
-		}else if ( customer.getTypes().contains( CustomerType.AFFILIATE ) ) {
+		}else if ( customer.getType() == CustomerType.AFFILIATE ) {
 			return new DiscountForEvery100( new AffiliateDiscount() );
 			
 		}else {

@@ -1,11 +1,9 @@
 package com.senebii.discount;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -42,10 +40,10 @@ class RegularCustomerDiscountTest {
 	private void validateDiscount(Date joinDate, double productPrice, double expected) {
 		DiscountStrategy discountStrategy = createDiscountStrategy(joinDate);
 		
-		Order order = new Order(1);
+		Order order = new Order(1, new Customer(1, new Date()));
 		Product product = new Product(1, 100, ProductType.OTHER);
-		List<OrderProduct> orderProducts = Arrays.asList(new OrderProduct(1, order, product));
-		double discount = discountStrategy.calculateDiscount(orderProducts);
+		order.addOrderProduct(new OrderProduct(1, order, product));
+		double discount = discountStrategy.calculateDiscount(order);
 		assertEquals(expected, discount);
 	}
 	

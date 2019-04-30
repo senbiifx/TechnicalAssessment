@@ -1,8 +1,6 @@
 package com.senebii.discount;
 
-import java.util.List;
-
-import com.senebii.order.OrderProduct;
+import com.senebii.order.Order;
 import com.senebii.utils.Utils;
 
 public class DiscountForEvery100 implements DiscountStrategy{
@@ -19,12 +17,12 @@ public class DiscountForEvery100 implements DiscountStrategy{
 		this.discountStrategy = n -> 0;
 	}
 
-	public double calculateDiscount(List<OrderProduct> list) {
-		double total = Utils.totalOf(list);
+	public double calculateDiscount(Order order) {
+		double total = Utils.totalOf(order.getOrderProducts());
 		
 		int multiplier = (int) (total / FOREVERYAMOUNT);
 		double totalDiscount = DISCOUNT * multiplier;
-		return totalDiscount + discountStrategy.calculateDiscount(list);
+		return totalDiscount + discountStrategy.calculateDiscount(order);
 	}
 
 	
