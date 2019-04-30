@@ -32,7 +32,7 @@ class EmployeeDiscountTest {
 	public void testAffiliateDiscount_nonGrocery_multipleProductsProduct() {
 		ShoppingCart order = new ShoppingCart( new Customer(1, new Date()));
 		Product product = new Product(1, 100, ProductType.OTHER);
-		Product product2 = new Product(1, 100, ProductType.OTHER);
+		Product product2 = new Product(2, 100, ProductType.OTHER);
 		order.addOrUpdateItem(new LineItem(1, order, product));
 		order.addOrUpdateItem(new LineItem(2, order, product2));
 		double discount = discountStrategy.calculateDiscount(order);

@@ -1,6 +1,7 @@
 package com.senebii;
 
 import java.util.Date;
+import java.util.logging.Logger;
 
 import com.senebii.billing.Bill;
 import com.senebii.cart.LineItem;
@@ -9,6 +10,7 @@ import com.senebii.customer.Customer;
 import com.senebii.product.Product;
 
 public class Shop {
+	private Logger logger = Logger.getAnonymousLogger();
 	public static void main(String[] args) {
 		Customer customer = new Customer(1, new Date());
 		
@@ -20,7 +22,7 @@ public class Shop {
 		
 		Bill bill = cart.getBill();
 		
-		System.out.println("Total amount: " + bill.getTotal()); 
+		System.out.println("Total amount: " + bill.getTotal());
 		System.out.println("Discount: " + bill.getDiscount());
 		System.out.println("Net Payable Amount: " + bill.getNetPayableAmount());
 	}

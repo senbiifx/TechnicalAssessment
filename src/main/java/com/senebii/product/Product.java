@@ -34,5 +34,19 @@ public class Product {
 		return price;
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof Product) {
+			Product other = (Product) obj;
+			return other.getId() == getId();
+		}else {
+			return false;
+		}
+	}
+	
+	@Override
+	public int hashCode() {
+		return getId().hashCode();
+	}
 	
 }

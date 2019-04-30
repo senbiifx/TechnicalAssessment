@@ -56,9 +56,10 @@ public class LineItem {
 	
 	@Override
 	public int hashCode() {
-		return product.getId().hashCode();
+		return product.hashCode();
 	}
 	
+
 	@Override
 	public String toString() {
 		return super.toString();

@@ -40,7 +40,7 @@ public class DiscountForEvery100Test {
 	@DisplayName("Validate discount for multiple products with price greater than 100")
 	public void testDiscountForEvery100_above100_multipleProducts() {
 		Product chicken = new Product(1, 120, ProductType.GROCERY);
-		Product beef = new Product(1, 180, ProductType.GROCERY);
+		Product beef = new Product(2, 180, ProductType.GROCERY);
 		ShoppingCart order = new ShoppingCart( new Customer(1, new Date()));
 		order.addOrUpdateItem(new LineItem(1, order, chicken));
 		order.addOrUpdateItem(new LineItem(2, order, beef) );

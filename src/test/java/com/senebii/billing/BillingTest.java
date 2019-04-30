@@ -104,7 +104,7 @@ public class BillingTest {
 		Customer customer = new Customer(1, new Date(), CustomerType.REGULAR);
 		ShoppingCart order = new ShoppingCart(customer);
 		Product product1 = new Product(1, 100, ProductType.OTHER);
-		Product product2 = new Product(1, 100, ProductType.OTHER);
+		Product product2 = new Product(2, 100, ProductType.OTHER);
 		order.addOrUpdateItem(new LineItem(1, order, product1));
 		order.addOrUpdateItem(new LineItem(2, order, product2));
 		DiscountStrategy discountStrategy = DiscountStrategyFactory.getDiscountStrategy(customer);
