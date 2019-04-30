@@ -75,14 +75,14 @@ public class LineItemTest {
 	public void testEqualityOtherObj() {
 		Product p = new Product(1, 1, ProductType.GROCERY);
 		LineItem op = new LineItem(1, null, p);
-		assertNotEquals(op, "");
+		assertNotEquals("", op);
 	}
 	
 	@Test
 	public void testInequality() {
 		Product p = new Product(1, 1, ProductType.GROCERY);
 		LineItem op = new LineItem(1, null, p);
-		assertNotEquals(op, "");
+		assertNotEquals("", op);
 	}
 
 }

@@ -47,6 +47,6 @@ public class ProductTest {
 	@Test
 	public void testInequalityObject() {
 		Product p = new Product(1, 1, ProductType.GROCERY);
-		assertNotEquals(p, "");
+		assertNotEquals("", p);
 	}
 }

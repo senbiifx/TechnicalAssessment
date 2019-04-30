@@ -10,7 +10,6 @@ import com.senebii.customer.Customer;
 import com.senebii.product.Product;
 
 public class Shop {
-	private Logger logger = Logger.getAnonymousLogger();
 	public static void main(String[] args) {
 			Customer customer = new Customer(1, new Date());
 			
