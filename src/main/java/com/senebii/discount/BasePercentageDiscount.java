@@ -3,15 +3,15 @@ package com.senebii.discount;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.senebii.order.Order;
-import com.senebii.order.OrderProduct;
+import com.senebii.cart.LineItem;
+import com.senebii.cart.ShoppingCart;
 import com.senebii.product.ProductType;
 
 public abstract class BasePercentageDiscount implements DiscountStrategy{
 
 	@Override
-	public double calculateDiscount(Order order) {
-		List<OrderProduct> nonGroceryItems = order.getOrderProducts().stream()
+	public double calculateDiscount(ShoppingCart order) {
+		List<LineItem> nonGroceryItems = order.getItems().stream()
 												  .filter(op -> op.getProduct().getProductType() != ProductType.GROCERY)
 												  .collect(Collectors.toList());
 		

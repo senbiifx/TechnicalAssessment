@@ -7,9 +7,9 @@ import java.util.Date;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import com.senebii.cart.LineItem;
+import com.senebii.cart.ShoppingCart;
 import com.senebii.customer.Customer;
-import com.senebii.order.Order;
-import com.senebii.order.OrderProduct;
 import com.senebii.product.Product;
 import com.senebii.product.ProductType;
 
@@ -19,9 +19,9 @@ public class AffiliateDiscountTest {
 	@Test
 	@DisplayName("Validate discount for 1 product")
 	public void testAffiliateDiscount_nonGrocery_1Product() {
-		Order order = new Order(1, new Customer(1, new Date()));
+		ShoppingCart order = new ShoppingCart(new Customer(1, new Date()));
 		Product product = new Product(1, 100, ProductType.OTHER);
-		order.addOrderProduct(new OrderProduct(1, order, product));
+		order.addOrUpdateItem(new LineItem(1, order, product));
 		double discount = discountStrategy.calculateDiscount(order);
 		assertEquals(10, discount);
 	}
@@ -30,11 +30,11 @@ public class AffiliateDiscountTest {
 	@Test
 	@DisplayName("Validate discount for multiple products")
 	public void testAffiliateDiscount_nonGrocery_multipleProductsProduct() {
-		Order order = new Order(1, new Customer(1, new Date()));
+		ShoppingCart order = new ShoppingCart(new Customer(1, new Date()));
 		Product product = new Product(1, 100, ProductType.OTHER);
 		Product product2 = new Product(1, 100, ProductType.OTHER);
-		order.addOrderProduct(new OrderProduct(1, order, product));
-		order.addOrderProduct( new OrderProduct(1, order, product2));
+		order.addOrUpdateItem(new LineItem(1, order, product));
+		order.addOrUpdateItem( new LineItem(2, order, product2));
 		double discount = discountStrategy.calculateDiscount(order);
 		assertEquals(20, discount);
 	}

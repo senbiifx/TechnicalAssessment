@@ -1,14 +1,18 @@
 package com.senebii.product;
 
 public class Product {
-	private int id;
+	private Integer id;
 	private double price;
 	private ProductType productType;
-
+	
 	public Product(int id, double price, ProductType productType) {
 		this.id = id;
 		this.price = price;
 		this.productType = productType;
+	}
+	
+	public Product(int id, double price) {
+		this(id, price, ProductType.OTHER);
 	}
 	
 	public ProductType getProductType() {
@@ -20,7 +24,7 @@ public class Product {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 	public void setId(int id) {
