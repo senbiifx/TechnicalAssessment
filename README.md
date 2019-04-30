@@ -4,7 +4,24 @@
 ## Class Diagram
 ![Alt text](TechAssessmentUML.png?raw=true "Class Diagram")
 
+## Sample Usage
+```
+  Customer customer = new Customer(1, new Date());
+  ShoppingCart cart = new ShoppingCart(customer);
+  Product product = new Product(1, 100);
+  cart.addOrUpdateItem(new LineItem(1, cart, product));
+  Bill bill = cart.getBill();	
+  System.out.println("Total amount: " + bill.getTotal());
+  System.out.println("Discount: " + bill.getDiscount());
+  System.out.println("Net Payable Amount: " + bill.getNetPayableAmount());
+```
 
+## JUnit Execution Result
+![Alt text](junit.PNG?raw=true "Class Diagram")
+
+
+## Coverage Test Execution Result
+![Alt text](coverage.PNG?raw=true "Class Diagram")
 
 ## How to Run JUnit and Coverage Test
 <b> Using Eclipse </b>
