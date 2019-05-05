@@ -28,8 +28,9 @@ public class RegularCustomerDiscount extends BasePercentageDiscount{
 	private boolean isOverNYears(Date date, int n) {
 		LocalDateTime joinDate = LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault());
 		LocalDateTime now = LocalDateTime.now();
-		LocalDateTime twoYearsFromNow = now.plusYears(n);
-		return joinDate.isAfter(twoYearsFromNow);
+		LocalDateTime twoYearsaGO = now.minusYears(n);
+		
+		return joinDate.isBefore(twoYearsaGO) || joinDate.isEqual(twoYearsaGO);
 	}
 	
 }
