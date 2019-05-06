@@ -94,7 +94,7 @@ public class BillingTest {
 		
 		double netPayableAmount = billing.getNetPayableAmount();
 		
-		assertEquals(90, netPayableAmount);
+		assertEquals(95, netPayableAmount);
 	}
 	
 	

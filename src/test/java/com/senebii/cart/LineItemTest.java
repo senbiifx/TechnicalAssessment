@@ -1,6 +1,7 @@
 package com.senebii.cart;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import java.util.Date;
@@ -83,6 +84,15 @@ public class LineItemTest {
 		Product p = new Product(1, 1, ProductType.GROCERY);
 		LineItem op = new LineItem(1, null, p);
 		assertNotEquals("", op);
+	}
+	
+	@Test
+	public void testInequalityObject() {
+		Product p = new Product(1, 1, ProductType.GROCERY);
+		LineItem op = new LineItem(1, null, p);
+		Object other = "";
+		boolean isEqual = op.equals(other);
+		assertFalse(isEqual);
 	}
 
 }

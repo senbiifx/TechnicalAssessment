@@ -8,7 +8,7 @@ import java.util.Date;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.senebii.cart.OrderDetails;
+import com.senebii.cart.LineItem;
 import com.senebii.cart.ShoppingCart;
 import com.senebii.customer.Customer;
 import com.senebii.product.Product;
@@ -29,6 +29,16 @@ class RegularCustomerDiscountTest {
 	
 	@Test
 	@DisplayName("Validate discount for customer with over 2 years joining date")
+	public void testRegularDiscount_exactly2yearsJoiningDate() {
+		Calendar calendar = Calendar.getInstance();
+		calendar.add(Calendar.YEAR, -2);
+		Date joindate = calendar.getTime();
+		
+		validateDiscount(joindate, 100, 5);
+	}
+	
+	@Test
+	@DisplayName("Validate discount for customer with over 2 years joining date")
 	public void testRegularDiscount_lessThan2YearsJoiningDate() {
 		Calendar calendar = Calendar.getInstance();
 		calendar.add(Calendar.YEAR, -1);
@@ -42,7 +52,7 @@ class RegularCustomerDiscountTest {
 		
 		ShoppingCart order = new ShoppingCart( new Customer(1, new Date()));
 		Product product = new Product(1, 100, ProductType.OTHER);
-		order.addOrUpdateItem(new OrderDetails(1, order, product));
+		order.addOrUpdateItem(new LineItem(1, order, product));
 		double discount = discountStrategy.calculateDiscount(order);
 		assertEquals(expected, discount);
 	}
