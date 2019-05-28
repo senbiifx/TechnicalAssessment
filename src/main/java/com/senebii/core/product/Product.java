@@ -1,6 +1,8 @@
 package com.senebii.core.product;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable{
 	private Integer id;
 	private double price;
 	private ProductType productType;

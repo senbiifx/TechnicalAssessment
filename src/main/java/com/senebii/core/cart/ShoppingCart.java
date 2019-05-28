@@ -33,7 +33,7 @@ public class ShoppingCart implements Serializable{
 	 */
 	public void addOrUpdateItem(LineItem item) {
 		item.setId(nextCountIfNull(item) );
-		lineItems.removeIf(i -> i.getId() == item.getId());
+		lineItems.removeIf(i -> i.getId().equals(item.getId()));
 		lineItems.add(item);
 	}
 
