@@ -23,19 +23,21 @@ public class ShoppingCartServiceImpl implements ShoppingCartService{
 	private ProductRepository productRepository;
 	
 	@Override
-	public ResponseModel<Boolean> saveItem(Integer id, SaveItemRequest request, ShoppingCart cart) {
+	public ResponseModel saveItem(Integer id, SaveItemRequest request, ShoppingCart cart) {
 		Product product = productRepository.getProduct(request.getProductId());
 		cart.addOrUpdateItem(new LineItem(id, cart, product, request.getQuantity()));
-		return ResponseModel.success(true);
+		return ResponseModel.success();
 	}
 
 	@Override
-	public ResponseModel<List<OrderInfo>> getItems(ShoppingCart cart) {
+	public ResponseModel getItems(ShoppingCart cart) {
 		Set<LineItem> items = cart.getItems();
 		List<OrderInfo> orderInfoList = items.stream()
 											 .map(mapToOrderInfo())
 											 .collect(Collectors.toList());
-		return ResponseModel.success(orderInfoList);
+		ResponseModel response = ResponseModel.success();
+		response.setData(orderInfoList);
+		return response;
 	}
 
 	private Function<? super LineItem, ? extends OrderInfo> mapToOrderInfo() {
@@ -49,18 +51,20 @@ public class ShoppingCartServiceImpl implements ShoppingCartService{
 	}
 
 	@Override
-	public ResponseModel<Boolean> deleteItem(Integer id, ShoppingCart cart) {
+	public ResponseModel deleteItem(Integer id, ShoppingCart cart) {
 		cart.deleteItem(id);
-		return ResponseModel.success(true);
+		return ResponseModel.success();
+		
 	}
 
 	@Override
-	public ResponseModel<BillingResponse> getBill(ShoppingCart cart) {
+	public ResponseModel getBill(ShoppingCart cart) {
 		Bill bill = cart.getBill();
 		BillingResponse response = new BillingResponse();
 		response.setTotal(bill.getTotal());
 		response.setDiscount(bill.getDiscount());
 		response.setNetPayableAmount(bill.getNetPayableAmount());
+		
 		return ResponseModel.success(response);
 	}
 

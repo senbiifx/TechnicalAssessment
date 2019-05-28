@@ -14,7 +14,7 @@ public class ProductServiceImpl implements ProductService{
 	@Autowired 
 	private ProductRepository repository;
 	@Override
-	public ResponseModel<List<ProductInfoResponse>> getProducts() {
+	public ResponseModel getProducts() {
 		List<ProductInfoResponse> list = repository.getProducts()
 										   .stream()
 										   .map(p -> new ProductInfoResponse(p.getId(), p.getPrice(), p.getProductType()))

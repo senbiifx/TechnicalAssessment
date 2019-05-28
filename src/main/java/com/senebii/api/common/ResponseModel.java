@@ -1,39 +1,39 @@
 package com.senebii.api.common;
 
-public class ResponseModel<T> {
-	private static final String ERROR_CODE_SUCCESS = "SUCCESS";
-	private static final String ERROR_CODE_FAILED = "FAILED";
-	
-	private T data;
-	private String errorCode;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+@JsonInclude(Include.NON_NULL)
+public class ResponseModel {
+	public static final String SUCCESS = "SUCCESS";
+	private Object data;
+	private String response;
 
-	public T getData() {
+	public Object getData() {
 		return data;
 	}
 
-	public void setData(T data) {
+	public void setData(Object data) {
 		this.data = data;
 	}
 	
 	
-	public String getErrorCode() {
-		return errorCode;
+	public String getResponse() {
+		return response;
 	}
 
-	public void setErrorCode(String errorCode) {
-		this.errorCode = errorCode;
+	public void setResponse(String errorCode) {
+		this.response = errorCode;
 	}
-
-	public static <T> ResponseModel<T> success(T data){
-		ResponseModel<T> response = new ResponseModel<>();
-		response.setErrorCode(ERROR_CODE_SUCCESS);
-		response.setData(data);
+	
+	public static ResponseModel success() {
+		ResponseModel response = new ResponseModel();
+		response.setResponse(ResponseModel.SUCCESS);
 		return response;
 	}
 	
-	public static <T> ResponseModel<T> failed(T data){
-		ResponseModel<T> response = new ResponseModel<>();
-		response.setErrorCode(ERROR_CODE_FAILED);
+	public static ResponseModel success(Object data) {
+		ResponseModel response = new ResponseModel();
+		response.setResponse(ResponseModel.SUCCESS);
 		response.setData(data);
 		return response;
 	}
