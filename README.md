@@ -1,5 +1,7 @@
 # TechnicalAssessment 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=senebii_TechnicalAssessment&metric=alert_status)](https://sonarcloud.io/dashboard?id=senebii_TechnicalAssessment)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=senebii_TechnicalAssessment&metric=alert_status)]
+UPDATED: Added Rest APIs
+(https://sonarcloud.io/dashboard?id=senebii_TechnicalAssessment)
 
 ## Class Diagram
 ![Alt text](TechAssessmentUML.png?raw=true "Class Diagram")
