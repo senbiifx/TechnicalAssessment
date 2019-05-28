@@ -2,12 +2,34 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=senebii_TechnicalAssessment&metric=alert_status)](https://sonarcloud.io/dashboard?id=senebii_TechnicalAssessment)
 
 UPDATED: Added REST APIs ```com.senebii.api```
+## REST APIs
+<div class="stackedit__html"><p><strong>Product Listing</strong><br>
+GET <code>/product/list/</code></p>
+<p><strong>Get Items in Cart</strong><br>
+GET <code>/cart/list/</code></p>
+<p><strong>Add Items to Cart</strong><br>
+POST <code>/cart/add</code></p>
+<pre><code>{
+	"productId": 2,
+	"quantity": 25
+}
+</code></pre>
+<p><strong>Update Item</strong><br>
+POST <code>/cart/save/{id}</code></p>
+<pre><code>{
+	"productId": 2,
+	"quantity": 25
+}
+</code></pre>
+<p><strong>Delete Items from Cart</strong><br>
+POST <code>/cart/delete/{id}</code></p>
+<p><strong>Get Bill</strong><br>
+GET <code>/cart/bill</code></p>
+</div>
+
 
 ## Class Diagram
 ![Alt text](TechAssessmentUML.png?raw=true "Class Diagram")
-
-## REST APIs
-https://documenter.getpostman.com/view/3485788/S1TSZzDe?version=latest
 
 
 ## JUnit Execution Result
