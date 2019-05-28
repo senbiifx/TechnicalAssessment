@@ -5,26 +5,90 @@ UPDATED: Added REST APIs ```com.senebii.api```
 ## REST APIs
 <div class="stackedit__html"><p><strong>Product Listing</strong><br>
 GET <code>/product/list</code></p>
+<pre><code>
+Response:
+{
+    "data": [
+        {
+            "id": 1,
+            "price": 100,
+            "productType": "GROCERY"
+        }
+     ],
+    "errorCode": "SUCCESS"
+}
+</code></pre>
 <p><strong>Get Items in Cart</strong><br>
 GET <code>/cart/list</code></p>
+<pre><code>
+Response:
+{
+    "data": [
+        {
+            "id": 1,
+            "product": {
+                "id": 2,
+                "price": 90,
+                "productType": "GROCERY"
+            },
+            "quantity": 25
+        }
+    ],
+    "errorCode": "SUCCESS"
+}
+</code></pre>
 <p><strong>Add Items to Cart</strong><br>
 POST <code>/cart/add</code></p>
-<pre><code>{
+<pre><code>
+Request Body:
+{
 	"productId": 2,
 	"quantity": 25
+}
+
+Response:
+{
+    "data": true,
+    "errorCode": "SUCCESS"
 }
 </code></pre>
 <p><strong>Update Item</strong><br>
 POST <code>/cart/save/{id}</code></p>
-<pre><code>{
+<pre><code>
+Request Body:
+{
 	"productId": 2,
 	"quantity": 25
 }
+
+Response:
+{
+    "data": true,
+    "errorCode": "SUCCESS"
+}
 </code></pre>
-<p><strong>Delete Items from Cart</strong><br>
+<p><strong>Delete Item from Cart</strong><br>
 POST <code>/cart/delete/{id}</code></p>
+<pre><code>
+Response:
+{
+    "data": true,
+    "errorCode": "SUCCESS"
+}
+</code></pre>
 <p><strong>Get Bill</strong><br>
 GET <code>/cart/bill</code></p>
+<pre><code>
+Response:
+{
+    "data": {
+        "total": 2250,
+        "discount": 110,
+        "netPayableAmount": 2140
+    },
+    "errorCode": "SUCCESS"
+}
+</code></pre>
 </div>
 
 
