@@ -9,6 +9,7 @@ UPDATED: Added REST APIs ```com.senebii.api```
 ## REST APIs
 https://documenter.getpostman.com/view/3485788/S1TSZzDe?version=latest
 
+
 ## JUnit Execution Result
 ![Alt text](junit.PNG?raw=true "Class Diagram")
 
@@ -27,3 +28,10 @@ Right click on your project in the Project Explorer then select "Coverage As" > 
 1.) Install <a href="https://maven.apache.org/install.html">Maven</a>.
 <br/>
 2.) Go to the project directory, then run <code> mvn test </code>. Maven will run the test and generate  the Junit execution report. Coverage report will be generated at <code>PROJECT_DIRECTORY\target\site\jacoco</code>
+
+
+## How to Run the Application
+Go to the application root directory then run `mvn spring-boot:run` <br/>
+Note: 
+-> Customer Information is hardcoded in com.senebii.api.config.SessionInterceptor there is no implementation of login
+-> Product listing is mocked in com.senebii.api.product.ProductRepositoryMockData.java
