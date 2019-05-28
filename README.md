@@ -4,9 +4,9 @@
 UPDATED: Added REST APIs ```com.senebii.api```
 ## REST APIs
 <div class="stackedit__html"><p><strong>Product Listing</strong><br>
-GET <code>/product/list/</code></p>
+GET <code>/product/list</code></p>
 <p><strong>Get Items in Cart</strong><br>
-GET <code>/cart/list/</code></p>
+GET <code>/cart/list</code></p>
 <p><strong>Add Items to Cart</strong><br>
 POST <code>/cart/add</code></p>
 <pre><code>{
