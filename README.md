@@ -15,7 +15,7 @@ Response:
             "productType": "GROCERY"
         }
      ],
-    "errorCode": "SUCCESS"
+    "response": "SUCCESS"
 }
 </code></pre>
 <p><strong>Get Items in Cart</strong><br>
@@ -34,7 +34,7 @@ Response:
             "quantity": 25
         }
     ],
-    "errorCode": "SUCCESS"
+    "response": "SUCCESS"
 }
 </code></pre>
 <p><strong>Add Items to Cart</strong><br>
@@ -48,8 +48,7 @@ Request Body:
 
 Response:
 {
-    "data": true,
-    "errorCode": "SUCCESS"
+    "response": "SUCCESS"
 }
 </code></pre>
 <p><strong>Update Item</strong><br>
@@ -63,8 +62,7 @@ Request Body:
 
 Response:
 {
-    "data": true,
-    "errorCode": "SUCCESS"
+    "response": "SUCCESS"
 }
 </code></pre>
 <p><strong>Delete Item from Cart</strong><br>
@@ -72,8 +70,7 @@ POST <code>/cart/delete/{id}</code></p>
 <pre><code>
 Response:
 {
-    "data": true,
-    "errorCode": "SUCCESS"
+    "response": "SUCCESS"
 }
 </code></pre>
 <p><strong>Get Bill</strong><br>
@@ -86,7 +83,7 @@ Response:
         "discount": 110,
         "netPayableAmount": 2140
     },
-    "errorCode": "SUCCESS"
+    "response": "SUCCESS"
 }
 </code></pre>
 </div>
