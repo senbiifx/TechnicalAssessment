@@ -1,20 +1,36 @@
 # TechnicalAssessment 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=senebii_TechnicalAssessment&metric=alert_status)](https://sonarcloud.io/dashboard?id=senebii_TechnicalAssessment)
 
+UPDATED: Added REST APIs ```com.senebii.api```
+## REST APIs
+<div class="stackedit__html"><p><strong>Product Listing</strong><br>
+GET <code>/product/list</code></p>
+<p><strong>Get Items in Cart</strong><br>
+GET <code>/cart/list</code></p>
+<p><strong>Add Items to Cart</strong><br>
+POST <code>/cart/add</code></p>
+<pre><code>{
+	"productId": 2,
+	"quantity": 25
+}
+</code></pre>
+<p><strong>Update Item</strong><br>
+POST <code>/cart/save/{id}</code></p>
+<pre><code>{
+	"productId": 2,
+	"quantity": 25
+}
+</code></pre>
+<p><strong>Delete Items from Cart</strong><br>
+POST <code>/cart/delete/{id}</code></p>
+<p><strong>Get Bill</strong><br>
+GET <code>/cart/bill</code></p>
+</div>
+
+
 ## Class Diagram
 ![Alt text](TechAssessmentUML.png?raw=true "Class Diagram")
 
-## Sample Usage
-```
-  Customer customer = new Customer(1, new Date());
-  ShoppingCart cart = new ShoppingCart(customer);
-  Product product = new Product(1, 100);
-  cart.addOrUpdateItem(new LineItem(1, cart, product));
-  Bill bill = cart.getBill();	
-  System.out.println("Total amount: " + bill.getTotal());
-  System.out.println("Discount: " + bill.getDiscount());
-  System.out.println("Net Payable Amount: " + bill.getNetPayableAmount());
-```
 
 ## JUnit Execution Result
 ![Alt text](junit.PNG?raw=true "Class Diagram")
@@ -34,3 +50,10 @@ Right click on your project in the Project Explorer then select "Coverage As" > 
 1.) Install <a href="https://maven.apache.org/install.html">Maven</a>.
 <br/>
 2.) Go to the project directory, then run <code> mvn test </code>. Maven will run the test and generate  the Junit execution report. Coverage report will be generated at <code>PROJECT_DIRECTORY\target\site\jacoco</code>
+
+
+## How to Run the Application
+Go to the application root directory then run `mvn spring-boot:run` <br/>
+Note: <br/>
+-> Customer Information is hardcoded in `com.senebii.api.config.SessionInterceptor` since there is no implementation of login<br/>
+-> Product listing is mocked in com.senebii.api.product.ProductRepositoryMockData.java<br/>
