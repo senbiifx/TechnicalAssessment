@@ -32,6 +32,6 @@ Right click on your project in the Project Explorer then select "Coverage As" > 
 
 ## How to Run the Application
 Go to the application root directory then run `mvn spring-boot:run` <br/>
-Note: 
--> Customer Information is hardcoded in com.senebii.api.config.SessionInterceptor there is no implementation of login
--> Product listing is mocked in com.senebii.api.product.ProductRepositoryMockData.java
+Note: <br/>
+-> Customer Information is hardcoded in `com.senebii.api.config.SessionInterceptor` since there is no implementation of login<br/>
+-> Product listing is mocked in com.senebii.api.product.ProductRepositoryMockData.java<br/>
