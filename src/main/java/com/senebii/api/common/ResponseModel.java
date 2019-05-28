@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @JsonInclude(Include.NON_NULL)
 public class ResponseModel {
-	public static final String SUCCESS = "SUCCESS";
+	public static final String SUCCESS_RESPONSE = "SUCCESS";
 	private Object data;
 	private String response;
 
@@ -27,14 +27,13 @@ public class ResponseModel {
 	
 	public static ResponseModel success() {
 		ResponseModel response = new ResponseModel();
-		response.setResponse(ResponseModel.SUCCESS);
+		response.setResponse(ResponseModel.SUCCESS_RESPONSE);
 		return response;
 	}
 	
 	public static ResponseModel success(Object data) {
-		ResponseModel response = new ResponseModel();
-		response.setResponse(ResponseModel.SUCCESS);
-		response.setData(data);
-		return response;
+		ResponseModel model = success();
+		model.setData(data);
+		return model;
 	}
 }
