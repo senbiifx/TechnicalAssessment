@@ -6,17 +6,8 @@ UPDATED: Added REST APIs ```com.senebii.api```
 ## Class Diagram
 ![Alt text](TechAssessmentUML.png?raw=true "Class Diagram")
 
-## Sample Usage
-```
-  Customer customer = new Customer(1, new Date());
-  ShoppingCart cart = new ShoppingCart(customer);
-  Product product = new Product(1, 100);
-  cart.addOrUpdateItem(new LineItem(1, cart, product));
-  Bill bill = cart.getBill();	
-  System.out.println("Total amount: " + bill.getTotal());
-  System.out.println("Discount: " + bill.getDiscount());
-  System.out.println("Net Payable Amount: " + bill.getNetPayableAmount());
-```
+## REST APIs
+https://documenter.getpostman.com/view/3485788/S1TSZzDe?version=latest
 
 ## JUnit Execution Result
 ![Alt text](junit.PNG?raw=true "Class Diagram")
